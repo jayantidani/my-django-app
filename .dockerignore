@@ -1,0 +1,28 @@
+# Python / caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# virtualenvs / env
+venv/
+env/
+*.env
+
+# local DB / data
+*.sqlite3
+data/
+data/**
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# keys
+*.pem
+*.key
+
+# git
+.git
