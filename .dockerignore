@@ -1,0 +1,19 @@
+# Ignore database folders
+data/
+data/**
+mysql/
+mysql/**
+**/db/
+**/db/**
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Git and editor files
+.git
+.vscode
