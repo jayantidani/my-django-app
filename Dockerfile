@@ -1,12 +1,16 @@
 FROM python:3.9-slim
 
-WORKDIR /app/backend
+# set workdir inside container
+WORKDIR /app
 
-COPY requirements.txt /app/backend
-RUN pip install -r requirements.txt
+# copy only requirements first (for layer caching)
+COPY backend/requirements.txt /app/requirements.txt
 
-COPY . /app/backend
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+# copy project
+COPY backend/ /app/
 
 EXPOSE 8000
 
-CMD python /app/backend/manage.py runserver 0.0.0.0:8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
